@@ -12,7 +12,7 @@ def head(input_list):
       'Jan'
     """
 
-    return []
+    return input_list[0]
 
 
 def tail(input_list):
@@ -25,7 +25,7 @@ def tail(input_list):
 
     """
 
-    return []
+    return input_list[1:]
 
 
 def last(input_list):
@@ -38,7 +38,7 @@ def last(input_list):
 
     """
 
-    return []
+    return input_list[-1]
 
 
 def top(input_list):
@@ -51,7 +51,7 @@ def top(input_list):
 
     """
 
-    return []
+    return input_list[:-1]
 
 
 def first_three(input_list):
@@ -64,7 +64,7 @@ def first_three(input_list):
 
     """
 
-    return []
+    return input_list[:3]
 
 
 def last_five(input_list):
@@ -77,7 +77,7 @@ def last_five(input_list):
 
     """
 
-    return []
+    return input_list[-5:]
 
 
 def middle(input_list):
@@ -90,7 +90,7 @@ def middle(input_list):
 
     """
 
-    return []
+    return input_list[2:-2]
 
 
 def inner_four(input_list):
@@ -103,7 +103,7 @@ def inner_four(input_list):
 
     """
 
-    return []
+    return input_list[2:6]
 
 
 def inner_four_end(input_list):
@@ -119,7 +119,7 @@ def inner_four_end(input_list):
 
     """
 
-    return []
+    return input_list[-6:-2]
 
 
 def replace_head(input_list):
@@ -135,7 +135,9 @@ def replace_head(input_list):
     [42, 3, 6, 9, 12, 15, 18, 21, 24, 27]
 
     """
-
+    
+    input_list[0] = 42
+    
     pass
 
 
@@ -152,6 +154,9 @@ def replace_third_and_last(input_list):
     [0, 3, 37, 9, 12, 15, 18, 21, 24, 37]
 
     """
+    
+    input_list[2] = 37
+    input_list[-1] = 37
 
     pass
 
@@ -168,7 +173,7 @@ def backwards(input_list):
 
     """
 
-    pass
+    return input_list[::-1]
 
 
 def every_other(input_list):
@@ -181,7 +186,7 @@ def every_other(input_list):
 
     """
 
-    pass
+    return input_list[::2]
 
 
 def delete_third_and_seventh(input_list):
@@ -197,7 +202,8 @@ def delete_third_and_seventh(input_list):
     ['Do', 'Re', 'Fa', 'So', 'La', 'Do']
 
     """
-
+    del input_list[6]
+    del input_list[2]
     pass
 
 
@@ -212,8 +218,11 @@ def indices_of_positive_numbers(input_list):
     [0, 2, 3, 6]
 
     """
-
-    pass
+    index_list = []
+    for idx, num in enumerate(input_list):
+        if num > 0:
+            index_list.append(idx)
+    return index_list
 
 
 def sum_repeats(input_list):
@@ -228,5 +237,8 @@ def sum_repeats(input_list):
     7
 
     """
-
-    pass
+    sum_of_same = 0
+    for i in range(len(input_list)-1):
+        if input_list[i] == input_list[i+1]:
+            sum_of_same += input_list[i]
+    return sum_of_same
